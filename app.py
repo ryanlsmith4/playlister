@@ -70,7 +70,7 @@ def playlists_update(playlist_id):
 @app.route('/playlists/<playlist_id>/delete', methods=['POST'])
 def playlists_delete(playlist_id):
     """Delete one playlist."""
-    playlists.delete_done({'_id': ObjectId(playlist_id)})
+    playlists.delete_one({'_id': ObjectId(playlist_id)})
     return redirect(url_for('playlists_index'))
 
 @app.route('/playlists/comments', methods=['POST'])
